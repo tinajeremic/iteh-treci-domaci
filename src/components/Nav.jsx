@@ -8,15 +8,15 @@ const Nav = ({pretrazi}) => {
     <div className="logo"></div>
     <div className="nav-elements">
         <ul>
-            <li>Naslovna</li>
-            <li>Albumi</li>
-            <li>Izabrani albumi</li>
+            <li>Home</li>
+            <li>Dates</li>
+            <li>Your dates</li>
 
             <li>
                 <input 
                 type="text" 
                 id="kriterijum"
-                placeholder="Search albums"
+                placeholder="Search dates"
                 name="search"
                 onChange={() =>
                     pretrazi(document.getElementById("kriterijum").value)

@@ -1,5 +1,6 @@
 import './App.css';
 import Nav from "./components/Nav";
+import Albumi from "./components/Albumi";
 import { useState } from "react";
 
 function App() {
@@ -14,6 +15,7 @@ function pretrazi(kriterijum) {
   return (
     <div className="App">
       <Nav pretrazi={pretrazi}></Nav>
+      <Albumi></Albumi>
     </div>
   );
 }
