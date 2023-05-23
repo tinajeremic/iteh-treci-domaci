@@ -1,5 +1,6 @@
-import React from 'react'
-import {BsSearch} from "react-icons/bs"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import {BsSearch} from "react-icons/bs";
 
 const Nav = ({pretrazi}) => {
   return (
@@ -8,9 +9,21 @@ const Nav = ({pretrazi}) => {
     <div className="logo"></div>
     <div className="nav-elements">
         <ul>
-            <li>Home</li>
-            <li>Books</li>
-            <li>Wishlist</li>
+            <li>
+              <Link className="link" to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to="/knjige">
+                Books
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to="/izabrane">
+                Wishlist
+              </Link>
+            </li>
 
             <li>
                 <input 

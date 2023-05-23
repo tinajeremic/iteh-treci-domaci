@@ -4,6 +4,7 @@ import Preporuke from "./components/Preporuke";
 import Footer from './components/Footer';
 import Knjige from './components/Knjige';
 import Izabrane from './components/Izabrane';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from "react";
 
 function App() {
@@ -11,17 +12,17 @@ function App() {
   const [wishlistR, setWishlistR] = useState([]);
   const [knjigeNiz] = useState([
     {
-      id:1,
-      naziv:"A Court of Thorns and Roses",
-      slika:"https://www.knjizare-vulkan.rs/files/images/slike_proizvoda/349511.jpg",
-      opis:"When nineteen-year-old huntress Feyre kills a wolf in the woods, a terrifying creature arrives to demand retribution. Dragged to a treacherous magical land she knows about only from legends, Feyre discovers that her captor is not truly a beast, but one of the lethal, immortal faeries who once ruled her world.",
-      godina:"2015",
-      wishlist:0,
+      id: 1,
+      naziv: "A Court of Thorns and Roses",
+      slika: "https://www.knjizare-vulkan.rs/files/images/slike_proizvoda/349511.jpg",
+      opis: "When nineteen-year-old huntress Feyre kills a wolf in the woods, a terrifying creature arrives to demand retribution. Dragged to a treacherous magical land she knows about only from legends, Feyre discovers that her captor is not truly a beast, but one of the lethal, immortal faeries who once ruled her world.",
+      godina: "2015",
+      wishlist: 0,
     },
     {
       id:2,
-      naziv:"A court of Mist and Fury",
-      slika:"https://static.wikia.nocookie.net/acourtofthornsandroses/images/9/9a/Acomaf.jpg/revision/latest?cb=20200910192601",
+      naziv:"A Court of Mist and Fury",
+      slika:"https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1620325671i/50659468.jpg",
       opis:"Feyre has undergone more trials than one human woman can carry in her heart. Though she's now been granted the powers and lifespan of the High Fae, she is haunted by her time Under the Mountain and the terrible deeds she performed to save the lives of Tamlin and his people.",
       godina:"2016",
       wishlist:0,
@@ -152,19 +153,33 @@ function remove(id) {
   return (
     <div className="App">
       <div>
+      <BrowserRouter>
       <Nav pretrazi={pretrazi}></Nav>
-      <Preporuke></Preporuke>
-      <Knjige
-        kriterijum={kriterijumPretrage}
-        staze={wishlistR}
-        add={add}>
-      </Knjige>
-      <Izabrane
+      <Routes>
+        <Route path="/" element={<Preporuke></Preporuke>}></Route>
+        <Route
+              path="/knjige"
+              element={
+                <Knjige
+                  kriterijum={kriterijumPretrage}
+                  knjige={knjigeNiz}
+                  add={add}
+                ></Knjige>
+              }
+            ></Route>
+        <Route
+              path="/izabrane"
+              element={
+                <Izabrane
                   kriterijum={kriterijumPretrage}
                   knjige={wishlistR}
                   remove={remove}
                 ></Izabrane>
+              }
+        ></Route>
+      </Routes>
       <Footer></Footer>
+      </BrowserRouter>
       </div>
     </div>
   );

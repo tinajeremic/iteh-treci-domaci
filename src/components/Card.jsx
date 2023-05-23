@@ -1,6 +1,6 @@
 function Card ({ r, add, mod, remove }){
     return(
-        <div className="card">
+    <div className="card">
       <img src={r.slika} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{r.naziv}</h5>
