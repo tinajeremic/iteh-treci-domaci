@@ -5,13 +5,13 @@ const Hero = () => {
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-11/12 xl:w-1/2 p-5 space-y-5">
           <h1 className="text-5xl font-semibold">
-            Tickets Beyonce
+            Your safe place for reading...
           </h1>
         </div>
         <div className="hidden md:flex p-5">
           <img
             className="w-[400px] h-[300px] "
-            src="images/bey.png"
+            src="images/booktok.jpg"
             alt=""
           />
         </div>

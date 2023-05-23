@@ -9,14 +9,14 @@ const Nav = ({pretrazi}) => {
     <div className="nav-elements">
         <ul>
             <li>Home</li>
-            <li>Dates</li>
-            <li>Your dates</li>
+            <li>Books</li>
+            <li>Wishlist</li>
 
             <li>
                 <input 
                 type="text" 
                 id="kriterijum"
-                placeholder="Search dates"
+                placeholder="Search books"
                 name="search"
                 onChange={() =>
                     pretrazi(document.getElementById("kriterijum").value)
